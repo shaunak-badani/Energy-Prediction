@@ -4,6 +4,6 @@
 
 ## How to run : 
 
-`python3 Energy\ Prediction.py <name of dataset without extension>` : Generates label statistics and configuration previews.
+`python3 Energy\ Prediction.py <dataset location> <Molecule name>` : Generates label statistics and configuration previews.
 
 
