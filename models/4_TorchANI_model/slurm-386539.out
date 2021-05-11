@@ -1,0 +1,93 @@
+==========================================
+SLURM_JOB_ID = 386539
+SLURM_NODELIST = gnode91
+SLURM_JOB_GPUS = 1,2,3
+==========================================
+[NbConvertApp] Converting notebook Data_Preprocessing.ipynb to script
+[NbConvertApp] Writing 2998 bytes to Data_Preprocessing.py
+rm: cannot remove 'Benzene.h5': No such file or directory
+Batches , [10000, 20000, 30000]
+{'name': 'Benzene', 'batches': [10000, 20000, 30000], 'testing': [30000, 627983], 'model_path': '/scratch/shaunak/models/', 'datasets_path': '../../datasets/benzene_old_dft.npz'}
+Species :  [b'C', b'C', b'C', b'C', b'C', b'C', b'H', b'H', b'H', b'H', b'H', b'H']
+0 10000
+10000 20000
+20000 30000
+Done with writing to h5 file : 
+<HDF5 dataset "coordinates": shape (10000, 12, 3), type "<f8">
+<HDF5 dataset "energies": shape (10000,), type "<f8">
+<HDF5 dataset "species": shape (12,), type "|S1">
+ 
+<HDF5 dataset "coordinates": shape (10000, 12, 3), type "<f8">
+<HDF5 dataset "energies": shape (10000,), type "<f8">
+<HDF5 dataset "species": shape (12,), type "|S1">
+ 
+<HDF5 dataset "coordinates": shape (10000, 12, 3), type "<f8">
+<HDF5 dataset "energies": shape (10000,), type "<f8">
+<HDF5 dataset "species": shape (12,), type "|S1">
+ 
+Closing h5 file ...
+[NbConvertApp] Converting notebook Training.ipynb to script
+[NbConvertApp] Writing 9761 bytes to Training.py
+epoch 0:   0%|          | 0/20 [00:00<?, ?it/s]epoch 0:   5%|▌         | 1/20 [00:01<00:27,  1.47s/it]epoch 0:  10%|█         | 2/20 [00:03<00:27,  1.53s/it]epoch 0:  15%|█▌        | 3/20 [00:04<00:27,  1.60s/it]epoch 0:  20%|██        | 4/20 [00:06<00:26,  1.64s/it]epoch 0:  25%|██▌       | 5/20 [00:08<00:24,  1.66s/it]epoch 0:  30%|███       | 6/20 [00:09<00:23,  1.66s/it]epoch 0:  35%|███▌      | 7/20 [00:11<00:21,  1.62s/it]epoch 0:  40%|████      | 8/20 [00:13<00:20,  1.67s/it]epoch 0:  45%|████▌     | 9/20 [00:14<00:18,  1.70s/it]epoch 0:  50%|█████     | 10/20 [00:16<00:16,  1.63s/it]epoch 0:  55%|█████▌    | 11/20 [00:18<00:15,  1.68s/it]epoch 0:  60%|██████    | 12/20 [00:19<00:12,  1.60s/it]epoch 0:  65%|██████▌   | 13/20 [00:21<00:11,  1.64s/it]epoch 0:  70%|███████   | 14/20 [00:23<00:10,  1.67s/it]epoch 0:  75%|███████▌  | 15/20 [00:24<00:08,  1.68s/it]epoch 0:  80%|████████  | 16/20 [00:26<00:06,  1.58s/it]epoch 0:  85%|████████▌ | 17/20 [00:27<00:04,  1.53s/it]epoch 0:  90%|█████████ | 18/20 [00:28<00:03,  1.51s/it]epoch 0:  95%|█████████▌| 19/20 [00:30<00:01,  1.48s/it]epoch 0: 100%|██████████| 20/20 [00:30<00:00,  1.19s/it]epoch 0: 100%|██████████| 20/20 [00:30<00:00,  1.54s/it]
+epoch 1:   0%|          | 0/20 [00:00<?, ?it/s]epoch 1:   5%|▌         | 1/20 [00:01<00:32,  1.72s/it]epoch 1:  10%|█         | 2/20 [00:03<00:31,  1.72s/it]epoch 1:  15%|█▌        | 3/20 [00:05<00:29,  1.74s/it]epoch 1:  20%|██        | 4/20 [00:06<00:27,  1.71s/it]epoch 1:  25%|██▌       | 5/20 [00:08<00:25,  1.68s/it]epoch 1:  30%|███       | 6/20 [00:10<00:23,  1.71s/it]epoch 1:  35%|███▌      | 7/20 [00:12<00:22,  1.74s/it]epoch 1:  40%|████      | 8/20 [00:13<00:20,  1.73s/it]epoch 1:  45%|████▌     | 9/20 [00:15<00:18,  1.70s/it]epoch 1:  50%|█████     | 10/20 [00:16<00:16,  1.63s/it]epoch 1:  55%|█████▌    | 11/20 [00:18<00:14,  1.57s/it]epoch 1:  60%|██████    | 12/20 [00:20<00:12,  1.62s/it]epoch 1:  65%|██████▌   | 13/20 [00:21<00:11,  1.66s/it]epoch 1:  70%|███████   | 14/20 [00:23<00:09,  1.61s/it]epoch 1:  75%|███████▌  | 15/20 [00:24<00:07,  1.56s/it]epoch 1:  80%|████████  | 16/20 [00:26<00:06,  1.53s/it]epoch 1:  85%|████████▌ | 17/20 [00:27<00:04,  1.51s/it]epoch 1:  90%|█████████ | 18/20 [00:29<00:03,  1.51s/it]epoch 1:  95%|█████████▌| 19/20 [00:30<00:01,  1.56s/it]epoch 1: 100%|██████████| 20/20 [00:31<00:00,  1.27s/it]epoch 1: 100%|██████████| 20/20 [00:31<00:00,  1.57s/it]
+epoch 2:   0%|          | 0/20 [00:00<?, ?it/s]epoch 2:   5%|▌         | 1/20 [00:01<00:24,  1.29s/it]epoch 2:  10%|█         | 2/20 [00:02<00:25,  1.40s/it]epoch 2:  15%|█▌        | 3/20 [00:04<00:26,  1.55s/it]epoch 2:  20%|██        | 4/20 [00:06<00:25,  1.61s/it]epoch 2:  25%|██▌       | 5/20 [00:07<00:23,  1.58s/it]epoch 2:  30%|███       | 6/20 [00:09<00:21,  1.56s/it]epoch 2:  35%|███▌      | 7/20 [00:10<00:20,  1.58s/it]epoch 2:  40%|████      | 8/20 [00:12<00:18,  1.57s/it]epoch 2:  45%|████▌     | 9/20 [00:14<00:17,  1.58s/it]epoch 2:  50%|█████     | 10/20 [00:15<00:15,  1.60s/it]epoch 2:  55%|█████▌    | 11/20 [00:17<00:14,  1.61s/it]epoch 2:  60%|██████    | 12/20 [00:18<00:12,  1.61s/it]epoch 2:  65%|██████▌   | 13/20 [00:20<00:11,  1.62s/it]epoch 2:  70%|███████   | 14/20 [00:22<00:09,  1.64s/it]epoch 2:  75%|███████▌  | 15/20 [00:23<00:08,  1.61s/it]epoch 2:  80%|████████  | 16/20 [00:25<00:06,  1.64s/it]epoch 2:  85%|████████▌ | 17/20 [00:27<00:05,  1.68s/it]epoch 2:  90%|█████████ | 18/20 [00:28<00:03,  1.60s/it]epoch 2:  95%|█████████▌| 19/20 [00:30<00:01,  1.65s/it]epoch 2: 100%|██████████| 20/20 [00:30<00:00,  1.29s/it]epoch 2: 100%|██████████| 20/20 [00:30<00:00,  1.55s/it]
+epoch 3:   0%|          | 0/20 [00:00<?, ?it/s]epoch 3:   5%|▌         | 1/20 [00:01<00:26,  1.39s/it]epoch 3:  10%|█         | 2/20 [00:03<00:30,  1.67s/it]epoch 3:  15%|█▌        | 3/20 [00:04<00:28,  1.70s/it]epoch 3:  20%|██        | 4/20 [00:06<00:25,  1.62s/it]epoch 3:  25%|██▌       | 5/20 [00:07<00:23,  1.57s/it]epoch 3:  30%|███       | 6/20 [00:09<00:22,  1.59s/it]epoch 3:  35%|███▌      | 7/20 [00:11<00:20,  1.59s/it]epoch 3:  40%|████      | 8/20 [00:12<00:18,  1.55s/it]epoch 3:  45%|████▌     | 9/20 [00:14<00:16,  1.49s/it]epoch 3:  50%|█████     | 10/20 [00:15<00:15,  1.59s/it]epoch 3:  55%|█████▌    | 11/20 [00:17<00:14,  1.61s/it]epoch 3:  60%|██████    | 12/20 [00:18<00:12,  1.56s/it]epoch 3:  65%|██████▌   | 13/20 [00:20<00:10,  1.52s/it]epoch 3:  70%|███████   | 14/20 [00:21<00:08,  1.49s/it]epoch 3:  75%|███████▌  | 15/20 [00:23<00:07,  1.53s/it]epoch 3:  80%|████████  | 16/20 [00:24<00:06,  1.52s/it]epoch 3:  85%|████████▌ | 17/20 [00:26<00:04,  1.58s/it]epoch 3:  90%|█████████ | 18/20 [00:28<00:03,  1.63s/it]epoch 3:  95%|█████████▌| 19/20 [00:30<00:01,  1.63s/it]epoch 3: 100%|██████████| 20/20 [00:30<00:00,  1.33s/it]epoch 3: 100%|██████████| 20/20 [00:30<00:00,  1.53s/it]
+epoch 4:   0%|          | 0/20 [00:00<?, ?it/s]epoch 4:   5%|▌         | 1/20 [00:01<00:26,  1.38s/it]epoch 4:  10%|█         | 2/20 [00:03<00:28,  1.59s/it]epoch 4:  15%|█▌        | 3/20 [00:04<00:28,  1.68s/it]epoch 4:  20%|██        | 4/20 [00:06<00:26,  1.67s/it]epoch 4:  25%|██▌       | 5/20 [00:08<00:24,  1.64s/it]epoch 4:  30%|███       | 6/20 [00:09<00:22,  1.61s/it]epoch 4:  35%|███▌      | 7/20 [00:11<00:21,  1.62s/it]epoch 4:  40%|████      | 8/20 [00:13<00:19,  1.64s/it]epoch 4:  45%|████▌     | 9/20 [00:14<00:18,  1.67s/it]epoch 4:  50%|█████     | 10/20 [00:16<00:16,  1.70s/it]epoch 4:  55%|█████▌    | 11/20 [00:17<00:14,  1.63s/it]epoch 4:  60%|██████    | 12/20 [00:19<00:12,  1.59s/it]epoch 4:  65%|██████▌   | 13/20 [00:21<00:11,  1.60s/it]epoch 4:  70%|███████   | 14/20 [00:22<00:09,  1.55s/it]epoch 4:  75%|███████▌  | 15/20 [00:23<00:07,  1.51s/it]epoch 4:  80%|████████  | 16/20 [00:25<00:05,  1.49s/it]epoch 4:  85%|████████▌ | 17/20 [00:26<00:04,  1.47s/it]epoch 4:  90%|█████████ | 18/20 [00:28<00:03,  1.53s/it]epoch 4:  95%|█████████▌| 19/20 [00:30<00:01,  1.54s/it]epoch 4: 100%|██████████| 20/20 [00:30<00:00,  1.24s/it]epoch 4: 100%|██████████| 20/20 [00:30<00:00,  1.53s/it]
+Self atomic energies:  tensor([-19.4591, -19.4591], dtype=torch.float64)
+ANIModel(
+  (0): Sequential(
+    (0): Linear(in_features=384, out_features=160, bias=True)
+    (1): CELU(alpha=0.1)
+    (2): Linear(in_features=160, out_features=128, bias=True)
+    (3): CELU(alpha=0.1)
+    (4): Linear(in_features=128, out_features=96, bias=True)
+    (5): CELU(alpha=0.1)
+    (6): Linear(in_features=96, out_features=1, bias=True)
+  )
+  (1): Sequential(
+    (0): Linear(in_features=384, out_features=144, bias=True)
+    (1): CELU(alpha=0.1)
+    (2): Linear(in_features=144, out_features=112, bias=True)
+    (3): CELU(alpha=0.1)
+    (4): Linear(in_features=112, out_features=96, bias=True)
+    (5): CELU(alpha=0.1)
+    (6): Linear(in_features=96, out_features=1, bias=True)
+  )
+  (2): Sequential(
+    (0): Linear(in_features=384, out_features=128, bias=True)
+    (1): CELU(alpha=0.1)
+    (2): Linear(in_features=128, out_features=112, bias=True)
+    (3): CELU(alpha=0.1)
+    (4): Linear(in_features=112, out_features=96, bias=True)
+    (5): CELU(alpha=0.1)
+    (6): Linear(in_features=96, out_features=1, bias=True)
+  )
+  (3): Sequential(
+    (0): Linear(in_features=384, out_features=128, bias=True)
+    (1): CELU(alpha=0.1)
+    (2): Linear(in_features=128, out_features=112, bias=True)
+    (3): CELU(alpha=0.1)
+    (4): Linear(in_features=112, out_features=96, bias=True)
+    (5): CELU(alpha=0.1)
+    (6): Linear(in_features=96, out_features=1, bias=True)
+  )
+)
+training starting from epoch 0
+RMSE: 558.2373012856214 at epoch 0
+RMSE: 70.89223838699078 at epoch 1
+RMSE: 12.036510464526641 at epoch 2
+RMSE: 6.195716984322112 at epoch 3
+RMSE: 5.76012029554847 at epoch 4
+torch.float32
+torch.Size([1250, 12])
+torch.Size([1250, 12, 3])
+torch.Size([1250])
+torch.Size([1250])
+[NbConvertApp] Converting notebook Testing.ipynb to script
+[NbConvertApp] Writing 5660 bytes to Testing.py
+/home/shaunak/Non_Research/sem8/ML4NS/proj/models/4_TorchANI_model/../../datasets/benzene_old_dft.npz
+[b'C', b'C', b'C', b'C', b'C', b'C', b'H', b'H', b'H', b'H', b'H', b'H']
+30000 40000
+Done with writing to temporary h5 file : 
+torch.Size([10000, 12])
+torch.Size([10000, 12, 3])

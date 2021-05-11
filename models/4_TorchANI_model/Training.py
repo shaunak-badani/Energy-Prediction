@@ -68,18 +68,18 @@ device = 'cpu'
 # In[7]:
 
 
-Rcr = 5.2000e+00
-Rca = 3.5000e+00
-EtaR = torch.tensor([1.6000000e+01], device=device)
-ShfR = torch.tensor([9.0000000e-01, 1.1687500e+00, 1.4375000e+00, 1.7062500e+00, 1.9750000e+00, 2.2437500e+00, 2.5125000e+00, 2.7812500e+00, 3.0500000e+00, 3.3187500e+00, 3.5875000e+00, 3.8562500e+00, 4.1250000e+00, 4.3937500e+00, 4.6625000e+00, 4.9312500e+00], device=device)
-Zeta = torch.tensor([3.2000000e+01], device=device)
-ShfZ = torch.tensor([1.9634954e-01, 5.8904862e-01, 9.8174770e-01, 1.3744468e+00, 1.7671459e+00, 2.1598449e+00, 2.5525440e+00, 2.9452431e+00], device=device)
-EtaA = torch.tensor([8.0000000e+00], device=device)
-ShfA = torch.tensor([9.0000000e-01, 1.5500000e+00, 2.2000000e+00, 2.8500000e+00], device=device)
-species_order = ['H', 'C', 'N', 'O']
-num_species = len(species_order)
-aev_computer = torchani.AEVComputer(Rcr, Rca, EtaR, ShfR, EtaA, Zeta, ShfA, ShfZ, num_species)
-energy_shifter = torchani.utils.EnergyShifter(None)
+# Rcr = 5.2000e+00
+# Rca = 3.5000e+00
+# EtaR = torch.tensor([1.6000000e+01], device=device)
+# ShfR = torch.tensor([9.0000000e-01, 1.1687500e+00, 1.4375000e+00, 1.7062500e+00, 1.9750000e+00, 2.2437500e+00, 2.5125000e+00, 2.7812500e+00, 3.0500000e+00, 3.3187500e+00, 3.5875000e+00, 3.8562500e+00, 4.1250000e+00, 4.3937500e+00, 4.6625000e+00, 4.9312500e+00], device=device)
+# Zeta = torch.tensor([3.2000000e+01], device=device)
+# ShfZ = torch.tensor([1.9634954e-01, 5.8904862e-01, 9.8174770e-01, 1.3744468e+00, 1.7671459e+00, 2.1598449e+00, 2.5525440e+00, 2.9452431e+00], device=device)
+# EtaA = torch.tensor([8.0000000e+00], device=device)
+# ShfA = torch.tensor([9.0000000e-01, 1.5500000e+00, 2.2000000e+00, 2.8500000e+00], device=device)
+# species_order = ['H', 'C', 'N', 'O']
+# num_species = len(species_order)
+# aev_computer = torchani.AEVComputer(Rcr, Rca, EtaR, ShfR, EtaA, Zeta, ShfA, ShfZ, num_species)
+# energy_shifter = torchani.utils.EnergyShifter(None)
 
 
 # In[8]:
@@ -96,10 +96,19 @@ batch_size = 1250
 # In[9]:
 
 
-aev_dim = aev_computer.aev_length
+# aev_dim = aev_computer.aev_length
 
 
 # In[10]:
+
+
+from Model_Hyperparameters import get_aev_params, get_complete_network
+energy_shifter, aev_computer = get_aev_params(device)
+H_network,C_network, N_network, O_network, model, nn = get_complete_network(aev_computer, device, return_networks = True)
+species_order = ['H', 'C', 'N', 'O']
+
+
+# In[11]:
 
 
 training, validation = data.subtract_self_energies(energy_shifter, species_order).species_to_indices(species_order).shuffle().split(0.8, None)
@@ -108,53 +117,59 @@ validation = validation.collate(batch_size).cache()
 print('Self atomic energies: ', energy_shifter.self_energies)
 
 
-# In[11]:
+# In[ ]:
 
 
-aev_dim = aev_computer.aev_length
+# aev_dim = aev_computer.aev_length
 
-H_network = torch.nn.Sequential(
-    torch.nn.Linear(aev_dim, 160),
-    torch.nn.CELU(0.1),
-    torch.nn.Linear(160, 128),
-    torch.nn.CELU(0.1),
-    torch.nn.Linear(128, 96),
-    torch.nn.CELU(0.1),
-    torch.nn.Linear(96, 1)
-)
+# H_network = torch.nn.Sequential(
+#     torch.nn.Linear(aev_dim, 160),
+#     torch.nn.CELU(0.1),
+#     torch.nn.Linear(160, 128),
+#     torch.nn.CELU(0.1),
+#     torch.nn.Linear(128, 96),
+#     torch.nn.CELU(0.1),
+#     torch.nn.Linear(96, 1)
+# )
 
-C_network = torch.nn.Sequential(
-    torch.nn.Linear(aev_dim, 144),
-    torch.nn.CELU(0.1),
-    torch.nn.Linear(144, 112),
-    torch.nn.CELU(0.1),
-    torch.nn.Linear(112, 96),
-    torch.nn.CELU(0.1),
-    torch.nn.Linear(96, 1)
-)
+# C_network = torch.nn.Sequential(
+#     torch.nn.Linear(aev_dim, 144),
+#     torch.nn.CELU(0.1),
+#     torch.nn.Linear(144, 112),
+#     torch.nn.CELU(0.1),
+#     torch.nn.Linear(112, 96),
+#     torch.nn.CELU(0.1),
+#     torch.nn.Linear(96, 1)
+# )
 
-N_network = torch.nn.Sequential(
-    torch.nn.Linear(aev_dim, 128),
-    torch.nn.CELU(0.1),
-    torch.nn.Linear(128, 112),
-    torch.nn.CELU(0.1),
-    torch.nn.Linear(112, 96),
-    torch.nn.CELU(0.1),
-    torch.nn.Linear(96, 1)
-)
+# N_network = torch.nn.Sequential(
+#     torch.nn.Linear(aev_dim, 128),
+#     torch.nn.CELU(0.1),
+#     torch.nn.Linear(128, 112),
+#     torch.nn.CELU(0.1),
+#     torch.nn.Linear(112, 96),
+#     torch.nn.CELU(0.1),
+#     torch.nn.Linear(96, 1)
+# )
 
-O_network = torch.nn.Sequential(
-    torch.nn.Linear(aev_dim, 128),
-    torch.nn.CELU(0.1),
-    torch.nn.Linear(128, 112),
-    torch.nn.CELU(0.1),
-    torch.nn.Linear(112, 96),
-    torch.nn.CELU(0.1),
-    torch.nn.Linear(96, 1)
-)
+# O_network = torch.nn.Sequential(
+#     torch.nn.Linear(aev_dim, 128),
+#     torch.nn.CELU(0.1),
+#     torch.nn.Linear(128, 112),
+#     torch.nn.CELU(0.1),
+#     torch.nn.Linear(112, 96),
+#     torch.nn.CELU(0.1),
+#     torch.nn.Linear(96, 1)
+# )
 
-nn = torchani.ANIModel([H_network, C_network, N_network, O_network])
-print(nn)
+# nn = torchani.ANIModel([H_network, C_network, N_network, O_network])
+# print(nn)
+
+
+# In[ ]:
+
+
+
 
 
 # In[12]:
@@ -172,10 +187,16 @@ nn.apply(init_params)
 # In[13]:
 
 
-model = torchani.nn.Sequential(aev_computer, nn).to(device)
+# model = torchani.nn.Sequential(aev_computer, nn).to(device)
 
 
 # In[14]:
+
+
+print(nn)
+
+
+# In[15]:
 
 
 AdamW = torch.optim.AdamW([
