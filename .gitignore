@@ -1,1 +1,4 @@
 *.npz
+torchani/
+*.py
+*.h5
