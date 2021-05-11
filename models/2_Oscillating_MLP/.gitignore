@@ -1,0 +1,7 @@
+EP/
+*.npy
+trainHistoryDict
+images/
+.ipynb_checkpoints
+*.csv
+logs/
