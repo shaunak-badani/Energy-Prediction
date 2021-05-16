@@ -1,0 +1,9 @@
+runs/
+.ipynb_checkpoints
+*.npy
+*.h5
+*.pt
+__pycache__
+*.png
+model_config
+slurm*.out
